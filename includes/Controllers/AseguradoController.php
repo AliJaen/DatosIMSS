@@ -20,4 +20,20 @@ class AseguradoController {
         // Mostrar los datos en al vista
         $this->view->mostrarDetalleAsegurados($asegurados);
     }
+
+    public function mostrarTotal($edo) {
+        // Obtener datos del modelo
+        $total = $this->model->totalAsegurados();
+
+        // Obtener los datos en la vista
+        $this->view->mostrarTotalAsegurados($total, $edo);
+    }
+
+    public function mostrarEnfPop($edo) {
+        // Obtenr los datos del model
+        $enfermedad = $this->model->enfermedadPopular($edo);
+
+        // Mostrar los datos en la vista
+        $this->view->mostrarEnfermedadPop($enfermedad);
+    }
 }

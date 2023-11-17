@@ -53,9 +53,35 @@
                         </div>
                         <div class="col">
                             <span style="font-size: 1.4em;">Inscritos Guanajuato</span>
-                            <p class="my-0" style="font-size: 3.8em;">34</p>
+                            <p class="my-0" style="font-size: 3.8em;">
+                            <?php
+                            require_once 'includes/Controllers/AseguradoController.php';
+                            require_once 'includes/Models/Asegurado.php';
+                            require_once 'includes/Views/AseguradoView.php';
+    
+                            // Crear instancias del modelo, vista y controlador
+                            $aseguradoModel = new Asegurado();
+                            $aseguradoView = new AseguradoView();
+                            $aseguradoController = new AseguradoController($aseguradoModel, $aseguradoView);
+
+                            $aseguradoController->mostrarTotal(1);
+                            ?>
+                            </p>
                             <p class="my-0" style="font-size: 0.8em;">Enfermedad popular</p>
-                            <span>Diabetes</span>
+                            <span>
+                            <?php
+                            require_once 'includes/Controllers/AseguradoController.php';
+                            require_once 'includes/Models/Asegurado.php';
+                            require_once 'includes/Views/AseguradoView.php';
+    
+                            // Crear instancias del modelo, vista y controlador
+                            $aseguradoModel = new Asegurado();
+                            $aseguradoView = new AseguradoView();
+                            $aseguradoController = new AseguradoController($aseguradoModel, $aseguradoView);
+
+                            $aseguradoController->mostrarEnfPop('06');
+                            ?>
+                            </span>
                         </div>
                     </div>
                 </div>
@@ -66,9 +92,35 @@
                         </div>
                         <div class="col">
                             <span style="font-size: 1.4em;">Inscritos Edo. México</span>
-                            <p class="my-0" style="font-size: 3.8em;">34</p>
+                            <p class="my-0" style="font-size: 3.8em;">
+                            <?php
+                            require_once 'includes/Controllers/AseguradoController.php';
+                            require_once 'includes/Models/Asegurado.php';
+                            require_once 'includes/Views/AseguradoView.php';
+    
+                            // Crear instancias del modelo, vista y controlador
+                            $aseguradoModel = new Asegurado();
+                            $aseguradoView = new AseguradoView();
+                            $aseguradoController = new AseguradoController($aseguradoModel, $aseguradoView);
+
+                            $aseguradoController->mostrarTotal(2);
+                            ?>
+                            </p>
                             <p class="my-0" style="font-size: 0.8em;">Enfermedad popular</p>
-                            <span>Sida</span>
+                            <span>
+                            <?php
+                            require_once 'includes/Controllers/AseguradoController.php';
+                            require_once 'includes/Models/Asegurado.php';
+                            require_once 'includes/Views/AseguradoView.php';
+    
+                            // Crear instancias del modelo, vista y controlador
+                            $aseguradoModel = new Asegurado();
+                            $aseguradoView = new AseguradoView();
+                            $aseguradoController = new AseguradoController($aseguradoModel, $aseguradoView);
+
+                            $aseguradoController->mostrarEnfPop('015');
+                            ?>
+                            </span>
                         </div>
                     </div>
                 </div>
@@ -79,9 +131,35 @@
                         </div>
                         <div class="col">
                             <span style="font-size: 1.4em;">Inscritos Michoacán</span>
-                            <p class="my-0" style="font-size: 3.8em;">34</p>
+                            <p class="my-0" style="font-size: 3.8em;">
+                            <?php
+                            require_once 'includes/Controllers/AseguradoController.php';
+                            require_once 'includes/Models/Asegurado.php';
+                            require_once 'includes/Views/AseguradoView.php';
+    
+                            // Crear instancias del modelo, vista y controlador
+                            $aseguradoModel = new Asegurado();
+                            $aseguradoView = new AseguradoView();
+                            $aseguradoController = new AseguradoController($aseguradoModel, $aseguradoView);
+
+                            $aseguradoController->mostrarTotal(3);
+                            ?>
+                            </p>
                             <p class="my-0" style="font-size: 0.8em;">Enfermedad popular</p>
-                            <span>Lupus</span>
+                            <span>
+                            <?php
+                            require_once 'includes/Controllers/AseguradoController.php';
+                            require_once 'includes/Models/Asegurado.php';
+                            require_once 'includes/Views/AseguradoView.php';
+    
+                            // Crear instancias del modelo, vista y controlador
+                            $aseguradoModel = new Asegurado();
+                            $aseguradoView = new AseguradoView();
+                            $aseguradoController = new AseguradoController($aseguradoModel, $aseguradoView);
+
+                            $aseguradoController->mostrarEnfPop('016');
+                            ?>
+                            </span>
                         </div>
                     </div>
                 </div>
@@ -142,19 +220,18 @@
                             <th>MUNICIPIO</th>
                             <th>ESTADO</th>
                         </tr>
-                    <?php
-                    require_once 'includes/Controllers/AseguradoController.php';
-                    require_once 'includes/Models/Asegurado.php';
-                    require_once 'includes/Views/AseguradoView.php';
+                        <?php
+                        require_once 'includes/Controllers/AseguradoController.php';
+                        require_once 'includes/Models/Asegurado.php';
+                        require_once 'includes/Views/AseguradoView.php';
 
-                    // Crear instancias del modelo, vista y controlador
-                    $aseguradoModel = new Asegurado();
-                    $aseguradoView = new AseguradoView();
-                    $aseguradoController = new AseguradoController($aseguradoModel, $aseguradoView);
-
-                    // Llamar al método del controlador para mostrar la lista de asegurados
-                    $aseguradoController->mostrarListaAsegurados();
-                    ?>
+                        // Crear instancias del modelo, vista y controlador
+                        $aseguradoModel = new Asegurado();
+                        $aseguradoView = new AseguradoView();
+                        $aseguradoController = new AseguradoController($aseguradoModel, $aseguradoView);
+                        // Llamar al método del controlador para mostrar la lista de asegurados
+                        $aseguradoController->mostrarListaAsegurados();
+                        ?>
                     </table>
                 </div>
                 <div class="modal-footer">

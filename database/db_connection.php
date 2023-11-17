@@ -8,10 +8,16 @@ class DatabaseConnection {
     private $conn;
 
     public function __construct() {
-        $this->conn = new mysqli($this->host, $this->username, $this->password, $this->database);
-        if ($this->conn->connect_error) {
-            die("Error de conexión: " . $this->conn->connect_error);
+        $this->conn = $this->connect();
+    }
+
+    private function connect() {
+        $conn = new mysqli($this->host, $this->username, $this->password, $this->database);
+        if ($conn->connect_error) {
+            die("Error de conexión: " . $conn->connect_error);
         }
+
+        return $conn;
     }
 
     public function getConnection() {
