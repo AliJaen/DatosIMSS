@@ -19,10 +19,21 @@ LEFT JOIN ESTADO AS EST ON EST.CLAVE = ASE.ESTCLAVE;
 -- | 06021379584 | Camila González López      | Gastritis      | NULL        | NULL                        | NULL            | OCAMPO                        | GUANAJUATO       |
 -- | 06021834795 | Camila Morales Pérez       | Cirrosis       | NULL        | NULL                        | NULL            | SANTA CATARINA                | GUANAJUATO       |
 
+SELECT ENFERMEDAD, SUM(CANTIDAD) AS TOTAL_CANTIDAD
+FROM (
+    SELECT ASE.ENFERMEDAD, COUNT(*) AS CANTIDAD 
+    FROM ASEGURADO AS ASE WHERE ESTCLAVE = 06
+    GROUP BY ASE.ENFERMEDAD
 
+    UNION ALL
 
-
-
+    SELECT DEP.ENFERMEDAD, COUNT(*) AS CANTIDAD 
+    FROM DEPENDIENTE AS DEP
+    GROUP BY DEP.ENFERMEDAD
+) AS EnfermedadesTotales
+GROUP BY ENFERMEDAD
+ORDER BY TOTAL_CANTIDAD DESC
+LIMIT 1;
 
 
 
