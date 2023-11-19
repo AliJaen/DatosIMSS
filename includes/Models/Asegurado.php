@@ -135,4 +135,52 @@ class Asegurado {
         }
 
     }
+
+
+    // Total Enfermedades de Todos los Estados 
+    public function totalEnfermedades(){
+        // Consulta
+        $sql = "SELECT EnfermedadesTotales.ENFERMEDAD, COUNT(*) AS CantidadTotal, ESTADO.CLAVE AS Estado
+                FROM(
+                    SELECT ENFERMEDAD, ESTCLAVE FROM ASEGURADO
+                    UNION ALL
+                    SELECT DEP.ENFERMEDAD, ASE.ESTCLAVE
+                    FROM DEPENDIENTE AS DEP
+                    INNER JOIN ASEGURADO AS ASE ON DEP.ASE_NSS = ASE.NSS
+                    )AS EnfermedadesTotales
+                JOIN ESTADO ON EnfermedadesTotales.ESTCLAVE = ESTADO.CLAVE
+                GROUP BY EnfermedadesTotales.ENFERMEDAD, Estado
+                ORDER BY Estado, CantidadTotal DESC; ";
+
+        $result = $this->conn->query($sql);
+
+        // Verifica la consulta
+        if ($result) {
+            $totalEnfermedades = array();
+
+            // Almacenar resultado en el array
+            while ($row = $result->fetch_assoc()) {
+                $totalEnfermedades[] = $row;
+            }
+
+            // Cierrar la conexión.
+            $this->conn->close();
+
+            return $totalEnfermedades;
+        } else {
+            die("Error en la consulta: " . $this->conn->error);
+        }
+
+
+
+    }
+
+
+
+
+
+
+
+
+
 }
