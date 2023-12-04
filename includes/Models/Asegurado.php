@@ -1,6 +1,6 @@
 <?php
 
-require_once '/xampp/htdocs/CuboIMSS/database/db_connection.php';
+require_once '/xampp/htdocs/DatosIMSS/database/db_connection.php';
 
 class Asegurado {
     

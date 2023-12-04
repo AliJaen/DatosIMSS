@@ -1,7 +1,7 @@
 <?php
 
-require_once '/xampp/htdocs/CuboIMSS/includes/Models/Asegurado.php';
-require_once '/xampp/htdocs/CuboIMSS/includes/Views/AseguradoView.php';
+require_once '/xampp/htdocs/DatosIMSS/includes/Models/Asegurado.php';
+require_once '/xampp/htdocs/DatosIMSS/includes/Views/AseguradoView.php';
 
 class AseguradoController {
     
