@@ -33,7 +33,7 @@
                 <i class='bx bx-cube-alt rounded shadow' style="font-size: 3.5em; background-color: #FFF;"></i>
             </div>
             <div class="col">
-                <p class="my-0" style="font-size: 2em;">Cubo OLAP</p>
+                <p class="my-0" style="font-size: 2em;">Datos</p>
                 <p class="my-0" style="font-size: 1.6em;">IMSS</p>
             </div>
         </div>
