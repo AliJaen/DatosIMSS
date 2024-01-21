@@ -232,6 +232,7 @@
                         $aseguradoController = new AseguradoController($aseguradoModel, $aseguradoView);
                         // Llamar al método del controlador para mostrar la lista de asegurados
                         $aseguradoController->mostrarListaAsegurados();
+                        
                         ?>
                     </table>
                 </div>
@@ -241,6 +242,19 @@
             </div>
         </div>
     </div>
+    <?php
+                        require_once 'includes/Controllers/AseguradoController.php';
+                        require_once 'includes/Models/Asegurado.php';
+                        require_once 'includes/Views/AseguradoView.php';
+
+                        // Crear instancias del modelo, vista y controlador
+                        $aseguradoModel = new Asegurado();
+                        $aseguradoView = new AseguradoView();
+                        $aseguradoController = new AseguradoController($aseguradoModel, $aseguradoView);
+                        // Llamar al método del controlador para mostrar la lista de asegurados
+                        $aseguradoController->obtenerTotalEnfermedades();
+                        
+                        ?>
     <!-- Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <!-- Archivo que genera las gráficas -->
